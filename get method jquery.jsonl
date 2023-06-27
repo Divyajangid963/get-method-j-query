@@ -1,0 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<table align="center" border="1px">
+	
+</table>
+<button id="b1">load data</button>
+<script>
+	$(document).ready(function() {
+		$("#b1").click(function () {
+			$.get('https://ppvj.pythonanywhere.com/product/',function (ary) {
+				for(var i of ary)
+				{
+					$("table").append("<tr><td>"+i.id+"</td><td>"+i.name+"</td><td>"+i.price+"</td><td>"+i.cat+"</td><td>"+i.cmp+"</td></tr>");
+				}
+			});
+		});
+	});
+</script>
